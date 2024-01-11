@@ -1,5 +1,6 @@
 import './App.css';
 import elephant from "./images/elephant.jpeg";
+import "./style.css";
 
 const imageData = ()=>{
   let data = [
@@ -25,6 +26,19 @@ const imageData = ()=>{
 
 function App() {
   // code here
+  const output = imageData()
+  return <div>
+    <h1 className='heading'>Kalvium gallary</h1>
+    <div className='container'>
+      {
+      output.map(function(element,index,output){
+        return <div key={element.id}>
+         <img src={element.img} />
+        </div>
+      })
+    }
+    </div>
+  </div>
 }
 
 export default App;

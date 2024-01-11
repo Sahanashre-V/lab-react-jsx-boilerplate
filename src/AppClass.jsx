@@ -1,6 +1,7 @@
 import { Component } from "react";
 import "./App.css"
 import elephant from "./images/elephant.jpeg";
+import "./style.css";
 
 export default class AppClass extends Component{
   
@@ -27,4 +28,19 @@ export default class AppClass extends Component{
   }
 
   // code here
+  render(){
+    const output = this.imageData()
+    return <div>
+      <h1 className="heading">Kalvium gallary</h1>
+      <div className="container">
+      {
+        output.map(function(element,index,output){
+          return <div key={element.id}>
+            <img src={element.img} />
+            </div>
+        })
+      }
+       </div>
+    </div>
+  }
 }
